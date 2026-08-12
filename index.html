@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0506">
+<title>ALESSANDRO — Personal Fitness</title>
+<style>
+:root{
+ --bg:#080506;--bg2:#120709;--card:rgba(28,11,14,.82);--line:#4a1b22;
+ --red:#ff3151;--red2:#ff6a7f;--text:#fff3f5;--muted:#a88990;
+ --shadow:0 20px 55px rgba(0,0,0,.48)
+}
+*{box-sizing:border-box}
+html{margin:0;padding:0;min-height:100%;background:#080506;overscroll-behavior-y:none}
+body{
+ margin:0;padding:0;min-height:100%;color:var(--text);
+ font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:
+ radial-gradient(circle at 20% 0%,rgba(255,49,81,.18),transparent 34%),
+ radial-gradient(circle at 100% 20%,rgba(255,106,127,.08),transparent 30%),
+ linear-gradient(145deg,#050303,#16080c 55%,#050303)
+}
+button{font:inherit}
+.app{max-width:560px;min-height:100dvh;margin:auto;padding:22px 16px 42px}
+@supports not (height:100dvh){.app{min-height:100vh}}
+@media(max-width:700px){html,body{width:100%;overflow-x:hidden}body{overscroll-behavior-y:none}}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.logo{font-weight:900;letter-spacing:3px;font-size:12px;color:var(--red2)}
+.status{display:flex;align-items:center;gap:6px;color:#b68c94;font-size:10px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+.hero{
+ padding:22px;border:1px solid var(--line);border-radius:25px;
+ background:linear-gradient(145deg,rgba(42,14,20,.92),rgba(14,7,9,.84));
+ box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:16px
+}
+.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(255,106,127,.13);border-radius:50%;right:-70px;top:-75px}
+.kicker{font-size:10px;letter-spacing:2px;color:var(--red);font-weight:900}
+.hero h1{font-size:34px;margin:6px 0 2px;letter-spacing:-1.5px}
+.hero p{margin:0;color:var(--muted);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+.stat{background:rgba(8,2,4,.48);border:1px solid var(--line);border-radius:14px;padding:10px}
+.stat strong{display:block;font-size:14px}.stat span{font-size:9px;color:var(--muted)}
+.nav{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:16px 0}
+.nav button{
+ border:1px solid var(--line);border-radius:20px;padding:20px 15px;
+ color:var(--text);background:var(--card);cursor:pointer;text-align:left;
+ transition:.18s;box-shadow:var(--shadow)
+}
+.nav button:hover,.nav button.active{border-color:var(--red);box-shadow:0 0 0 1px rgba(255,49,81,.25) inset,0 18px 45px rgba(0,0,0,.35)}
+.icon{font-size:23px;margin-bottom:10px}.nav strong{display:block;font-size:14px}.nav small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.screen{display:none}.screen.active{display:block}
+.topbar{display:flex;align-items:center;gap:12px;margin:8px 0 14px}
+.back{border:1px solid var(--line);background:var(--card);color:var(--text);width:38px;height:38px;border-radius:12px;cursor:pointer;font-size:24px}
+.page-title{font-size:20px;font-weight:900}.page-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.placeholder{
+ border:1px dashed #68242f;border-radius:20px;padding:28px 20px;text-align:center;
+ background:rgba(23,7,10,.62)
+}
+.placeholder .big{font-size:35px}.placeholder h2{font-size:17px;margin:9px 0 5px}.placeholder p{color:var(--muted);font-size:11px;line-height:1.5;margin:0}
+.footer{text-align:center;color:#6f4c53;font-size:9px;margin-top:25px;line-height:1.5;padding-bottom:0}
+@media(max-width:390px){.nav{grid-template-columns:1fr}.stats{gap:6px}}
+</style>
+</head>
+<body>
+<main class="app">
+
+<header class="header">
+  <div class="logo">ALESSANDRO // FITNESS SYSTEM</div>
+  <div class="status"><span class="dot"></span> ACTIVE</div>
+</header>
+
+<section id="home" class="screen active">
+  <div class="hero">
+    <div class="kicker">PERSONAL PROFILE</div>
+    <h1>ALESSANDRO</h1>
+    <p>Plan personalizado · Alimentación & entrenamiento</p>
+    <div class="stats">
+      <div class="stat"><strong>66,50 kg</strong><span>Peso inicial</span></div>
+      <div class="stat"><strong>1,80 m</strong><span>Altura</span></div>
+      <div class="stat"><strong>33 años</strong><span>Edad</span></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button class="active" onclick="openSection('food')">
+      <div class="icon">◈</div><strong>ALIMENTACIÓN</strong><small>Plan diario y cantidades</small>
+    </button>
+    <button onclick="openSection('training')">
+      <div class="icon">◉</div><strong>ENTRENAMIENTO</strong><small>Rutina y seguimiento</small>
+    </button>
+  </div>
+
+  <div class="placeholder">
+    <div class="big">✦</div>
+    <h2>Perfil preparado</h2>
+    <p>La aplicación ya está lista. Cuando recibamos tu plan de alimentación y tu rutina de entrenamiento, añadiremos los datos aquí sin cambiar el diseño.</p>
+  </div>
+</section>
+
+<section id="food" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openSection('home')">‹</button>
+    <div><div class="page-title">Alimentación</div><div class="page-sub">Plan personalizado · pendiente de actualización</div></div>
+  </div>
+  <div class="placeholder">
+    <div class="big">◈</div>
+    <h2>Plan de alimentación próximamente</h2>
+    <p>Esta sección está preparada para añadir los horarios, alimentos, cantidades, alternativas y suplementos indicados por la entrenadora.</p>
+  </div>
+</section>
+
+<section id="training" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openSection('home')">‹</button>
+    <div><div class="page-title">Entrenamiento</div><div class="page-sub">Rutina personalizada · pendiente de actualización</div></div>
+  </div>
+  <div class="placeholder">
+    <div class="big">◉</div>
+    <h2>Rutina próximamente</h2>
+    <p>Esta sección está preparada para añadir ejercicios, series, repeticiones, descansos y seguimiento cuando recibamos la rutina.</p>
+  </div>
+</section>
+
+<footer class="footer">ALESSANDRO // PERSONAL FITNESS · Versión inicial</footer>
+</main>
+
+<script>
+function openSection(id){
+ document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+</body>
+</html>
