@@ -3,43 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0506">
+<meta name="theme-color" content="#0b0507">
 <title>ALESSANDRO — Personal Fitness</title>
 <style>
+html,body{background:#090507;min-height:100%}
+html{overscroll-behavior-y:none}
 :root{
- --bg:#080506;--bg2:#120709;--card:rgba(28,11,14,.82);--line:#4a1b22;
- --red:#ff3151;--red2:#ff6a7f;--text:#fff3f5;--muted:#a88990;
- --shadow:0 20px 55px rgba(0,0,0,.48)
+  --bg:#090507;--bg2:#14080b;--card:rgba(27,10,14,.84);--line:#44202a;
+  --red:#ff3151;--red2:#ff5b70;--text:#fff1f4;--muted:#a6818a;
+  --shadow:0 20px 55px rgba(0,0,0,.48);
 }
 *{box-sizing:border-box}
-html{margin:0;padding:0;min-height:100%;background:#080506;overscroll-behavior-y:none}
 body{
- margin:0;padding:0;min-height:100%;color:var(--text);
+ margin:0;min-height:100dvh;color:var(--text);
  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
  background:
- radial-gradient(circle at 20% 0%,rgba(255,49,81,.18),transparent 34%),
- radial-gradient(circle at 100% 20%,rgba(255,106,127,.08),transparent 30%),
- linear-gradient(145deg,#050303,#16080c 55%,#050303)
+ radial-gradient(circle at 20% 0%,rgba(255,49,81,.20),transparent 34%),
+ radial-gradient(circle at 100% 20%,rgba(255,91,112,.10),transparent 30%),
+ linear-gradient(145deg,#060304,#16090d 55%,#060304);
 }
 button{font:inherit}
-.app{max-width:560px;min-height:100dvh;margin:auto;padding:22px 16px 42px}
-@supports not (height:100dvh){.app{min-height:100vh}}
-@media(max-width:700px){html,body{width:100%;overflow-x:hidden}body{overscroll-behavior-y:none}}
+.app{width:100%;max-width:560px;min-height:100dvh;margin:auto;padding:22px 16px 42px}
 .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
 .logo{font-weight:900;letter-spacing:3px;font-size:12px;color:var(--red2)}
-.status{display:flex;align-items:center;gap:6px;color:#b68c94;font-size:10px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+.status{display:flex;align-items:center;gap:6px;color:#b89099;font-size:10px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--red2);box-shadow:0 0 12px var(--red2)}
 .hero{
  padding:22px;border:1px solid var(--line);border-radius:25px;
- background:linear-gradient(145deg,rgba(42,14,20,.92),rgba(14,7,9,.84));
+ background:linear-gradient(145deg,rgba(45,14,21,.92),rgba(13,6,9,.84));
  box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:16px
 }
-.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(255,106,127,.13);border-radius:50%;right:-70px;top:-75px}
+.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(255,91,112,.14);border-radius:50%;right:-70px;top:-75px}
 .kicker{font-size:10px;letter-spacing:2px;color:var(--red);font-weight:900}
 .hero h1{font-size:34px;margin:6px 0 2px;letter-spacing:-1.5px}
 .hero p{margin:0;color:var(--muted);font-size:12px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
-.stat{background:rgba(8,2,4,.48);border:1px solid var(--line);border-radius:14px;padding:10px}
+.stat{background:rgba(5,2,3,.45);border:1px solid var(--line);border-radius:14px;padding:10px}
 .stat strong{display:block;font-size:14px}.stat span{font-size:9px;color:var(--muted)}
 .nav{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:16px 0}
 .nav button{
@@ -53,13 +52,49 @@ button{font:inherit}
 .topbar{display:flex;align-items:center;gap:12px;margin:8px 0 14px}
 .back{border:1px solid var(--line);background:var(--card);color:var(--text);width:38px;height:38px;border-radius:12px;cursor:pointer;font-size:24px}
 .page-title{font-size:20px;font-weight:900}.page-sub{font-size:10px;color:var(--muted);margin-top:2px}
-.placeholder{
- border:1px dashed #68242f;border-radius:20px;padding:28px 20px;text-align:center;
- background:rgba(23,7,10,.62)
+.day-tabs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px}
+.day-tabs button{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:15px;padding:13px 9px;cursor:pointer;font-size:10px;font-weight:900}
+.day-tabs button.active{color:var(--red2);border-color:var(--red);background:linear-gradient(135deg,rgba(255,49,81,.13),rgba(27,10,14,.9))}
+.label{font-size:10px;letter-spacing:1.6px;color:var(--red2);font-weight:900;margin:18px 2px 8px}
+.meals{display:grid;gap:9px}
+.meal{
+ border:1px solid var(--line);background:var(--card);border-radius:18px;
+ padding:15px;cursor:pointer;transition:.15s
 }
-.placeholder .big{font-size:35px}.placeholder h2{font-size:17px;margin:9px 0 5px}.placeholder p{color:var(--muted);font-size:11px;line-height:1.5;margin:0}
-.footer{text-align:center;color:#6f4c53;font-size:9px;margin-top:25px;line-height:1.5;padding-bottom:0}
-@media(max-width:390px){.nav{grid-template-columns:1fr}.stats{gap:6px}}
+.meal:hover{border-color:#8b3044}
+.mealhead{display:flex;gap:12px}
+.time{color:var(--red2);font-weight:900;font-size:11px;min-width:48px}
+.mealtitle{font-size:13px;font-weight:900}.summary{color:var(--muted);font-size:10px;line-height:1.4;margin-top:4px}
+.details{display:none;border-top:1px solid var(--line);margin-top:12px;padding-top:11px}
+.meal.open .details{display:block}
+.details ul{margin:0;padding-left:17px}.details li{font-size:11px;line-height:1.5;margin:6px 0}
+.details b{color:var(--red2)}
+.note{margin-top:14px;padding:13px;border:1px solid #54222f;background:rgba(35,9,15,.55);border-radius:16px;color:#b9939c;font-size:10px;line-height:1.5}
+.training-placeholder{
+ border:1px dashed #6d2938;border-radius:20px;padding:28px 20px;text-align:center;
+ background:rgba(27,8,13,.55)
+}
+.training-placeholder .big{font-size:35px}.training-placeholder h2{font-size:17px;margin:9px 0 5px}.training-placeholder p{color:var(--muted);font-size:11px;line-height:1.5;margin:0}
+.workout-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}
+.workout-tabs button{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:13px;padding:11px 4px;cursor:pointer;font-size:9px;font-weight:900}
+.workout-tabs button.active{color:var(--red2);border-color:var(--red);background:linear-gradient(135deg,rgba(255,49,81,.13),rgba(27,10,14,.9))}
+.checklist{margin-top:14px;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:14px}
+.check{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:9px 0;font-size:11px}
+.check:last-child{border:0}.check span{color:var(--muted)}input{accent-color:var(--red);width:17px;height:17px}
+.daily-card{margin-top:14px;border:1px solid var(--line);background:var(--card);border-radius:20px;padding:15px;box-shadow:var(--shadow)}
+.daily-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.today-label{color:var(--muted);font-size:9px;margin-top:4px;text-transform:uppercase;letter-spacing:.8px}
+.score{color:var(--red2);font-size:22px;font-weight:950}
+.progress-track{height:7px;border-radius:999px;background:#120609;border:1px solid #3b1722;overflow:hidden;margin:12px 0 14px}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--red2));box-shadow:0 0 16px rgba(255,91,112,.45);transition:.25s}
+.daily-section-title{font-size:9px;letter-spacing:1.4px;color:var(--red);font-weight:950;margin:14px 0 4px}
+.history-title{font-size:9px;letter-spacing:1.5px;color:var(--red2);font-weight:950;margin:17px 0 8px}
+.history{display:grid;gap:6px}
+.history-row{display:flex;align-items:center;justify-content:space-between;padding:8px 9px;border:1px solid #32141d;border-radius:11px;background:rgba(8,2,4,.38);font-size:10px}
+.history-row span{color:var(--muted)}
+.history-score{color:var(--red2);font-weight:900}
+.footer{text-align:center;color:#654650;font-size:9px;margin-top:25px;line-height:1.5;padding-bottom:0}
+@media(max-width:390px){.nav{grid-template-columns:1fr}.stats{gap:6px}.workout-tabs{gap:5px}}
 </style>
 </head>
 <body>
@@ -78,7 +113,7 @@ button{font:inherit}
     <div class="stats">
       <div class="stat"><strong>66,50 kg</strong><span>Peso inicial</span></div>
       <div class="stat"><strong>1,80 m</strong><span>Altura</span></div>
-      <div class="stat"><strong>33 años</strong><span>Edad</span></div>
+      <div class="stat"><strong>4×</strong><span>Entreno / semana</span></div>
     </div>
   </div>
 
@@ -91,46 +126,304 @@ button{font:inherit}
     </button>
   </div>
 
-  <div class="placeholder">
-    <div class="big">✦</div>
-    <h2>Perfil preparado</h2>
-    <p>La aplicación ya está lista. Cuando recibamos tu plan de alimentación y tu rutina de entrenamiento, añadiremos los datos aquí sin cambiar el diseño.</p>
-  </div>
+  <div class="note">HIPERTROFIA AVANZADA · OBJETIVO: MÁXIMA GANANCIA DE MASA MUSCULAR. Alimentación y entrenamiento personalizados según el plan de tu entrenadora.</div>
 </section>
 
 <section id="food" class="screen">
-<div class="topbar"><button class="back" onclick="openSection('home')">‹</button><div><div class="page-title">Alimentación</div><div class="page-sub">Plan personalizado · 4 días de entrenamiento</div></div></div>
-<div class="placeholder" style="text-align:left">
-<h2>DIETA CON ENTRENO</h2><p><b>Agua:</b> 3.5L diarios · <b>Sal TOTAL:</b> 4g diarios</p>
-<h3>09:00 — COMIDA 1</h3><p>Café (opcional)<br>150ml bebida almendras Zero<br>70g (2reb) pan cereales s/gluten. Tostar<br>100g tomate<br>5g aove<br>2huevos+ 150g claras<br>150g piña en su jugo</p><p><b>Ó</b></p><p>Café (opcional)<br>150ml bebida almendras Zero<br><b>Bizcocho fit con:</b><br>2huevos+ 150g claras<br>50g copos avena ó harina avena s/gluten<br>100g plátano ó manzana<br>canela<br>5g stevia en polvo<br>Bebida almendras Zero si hace falta para textura<br><br>Batir y hornear a 180º unos 20-25min<br>Añadir por encima: 14g (2onzas) chocolate negro minimo 85% cacao</p><p>2perlas Omega3 · 1cáps VitC</p>
-<h3>12:00 — PRE-ENTRENO</h3><p>30g ISO<br>200ml bebida almendras Zero<br>50g copos maiz s/azúcar ó COR<br><br>600mg NAC<br>600mg Potasio Boi-K<br>1g sal</p>
-<h3>15:00 — COMIDA2</h3><p>100g ensalada 4estaciones ó salteado de verduras<br>80g arroz blanco ó pasta s/gluten pesado en seco (200g en cocido) ó 350g patata/boniato pesado en cocido<br>180g carne roja magra/ pechuga pollo/pavo o lomo magro pesada en cocido<br>5g aove<br><br>5g Creatine Monohydrate<br>375mg Magnesio</p>
-<h3>18:00 — COMIDA4</h3><p>40g tortitas de arroz ó tostadas ligeras s/gluten -100g pechuga pollo/pavo ó jamón cocido mínimo 92% carne magra ó 80g jamón curado s/azúcar ó 150g cottage 0%+ 20g crema cacahuete 100%<br>100g arándanos</p>
-<h3>21:00 — COMIDA4</h3><p>180g pechuga pollo/pavo ó lomo magro pesado en cocido ó 200g pescado blanco pesado en cocido ó 170g lomos de salmon pesado en cocido ó 2huevos+ 200g claras<br>100g espárragos pesados en cocido (bote) ó salteado de verduras<br>350g patata/boniato pesado en cocido<br>5g aove</p>
-<hr style="border-color:#4a1b22;margin:24px 0">
-<h2>DIETA DESCANSO</h2>
-<h3>09:00 — COMIDA1</h3><p>Café (opcional)<br>200ml bebida almendras Zero<br>70g (2reb) pan cereales s/gluten. Tostar<br>100g tomate<br>5g aove<br>2huevos+ 120g claras<br>150g piña en su jugo</p><p><b>Ó</b></p><p>Café (opcional)<br>200ml bebida almendras Zero<br><b>Bizcocho fit con:</b><br>2huevos+ 120g claras<br>40g copos avena ó harina avena s/gluten<br>100g plátano<br>canela<br>5g stevia en polvo<br>Bebida almendras Zero si hace falta para textura<br><br>Batir y hornear a 180º unos 20-25min<br>Añadir por encima: 15g (2onzas) chocolate negro minimo 85% cacao</p><p>2perlas Omega3 · 1cáps VitC</p>
-<h3>14:00 — COMIDA2</h3><p>125g ensalada 4estaciones ó salteado de verduras<br>60g arroz blanco ó pasta s/gluten pesado en seco (150g en cocido) ó 300g patata/boniato pesado en cocido<br>180g carne roja magra/ pechuga pollo/pavo o lomo magro pesada en cocido<br>5g aove<br><br>5g Creatine Monohydrate<br>375mg Magnesio</p>
-<h3>17:00 — COMIDA4</h3><p>Café (opcional)<br><b>Bizcocho fit</b><br>150g cottage<br>1huevo+ 120g claras<br>35g copos avena s/gluten<br>80g manzana ó frutos rojos<br>canela<br>5g stevia en polvo<br>bebida almendras zero por textura<br><br>Batir y hornear a 180º unos 20-25min</p>
-<h3>21:00 — COMIDA4</h3><p>180g pechuga pollo/pavo ó lomo magro pesado en cocido ó 200g pescado blanco pesado en cocido ó 170g lomos de salmon pesado en cocido ó 2huevos+ 200g claras<br>100g espárragos pesados en cocido (bote) ó salteado de verduras<br>50g arroz ó pasta s/gluten pesado en seco (125g en cocido) ó 250g patata/boniato pesado en cocido<br>5g aove</p>
-</div></section>
+  <div class="topbar">
+    <button class="back" onclick="openSection('home')">‹</button>
+    <div><div class="page-title">Alimentación</div><div class="page-sub">12/08/2026 → 18/08/2026 · 4 días de entrenamiento</div></div>
+  </div>
+
+  <div class="day-tabs">
+    <button id="trainTab" class="active" onclick="setDay('training')">🏋️ DÍA DE ENTRENAMIENTO</button>
+    <button id="restTab" onclick="setDay('rest')">◌ DÍA DE DESCANSO</button>
+  </div>
+
+  <div id="foodContent"></div>
+
+  <div class="daily-card">
+    <div class="daily-head">
+      <div>
+        <div class="label" style="margin:0">DAILY CHECK</div>
+        <div id="todayLabel" class="today-label"></div>
+      </div>
+      <div class="score" id="scoreText">0%</div>
+    </div>
+
+    <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+
+    <div class="daily-section-title">🍽️ ALIMENTACIÓN</div>
+    <label class="check"><span>Desayuno</span><input class="daily-check" data-key="breakfast" type="checkbox"></label>
+    <label class="check" id="preRow"><span>Pre-entreno</span><input class="daily-check" data-key="preworkout" type="checkbox"></label>
+    <label class="check"><span>Comida post-entreno</span><input class="daily-check" data-key="lunch" type="checkbox"></label>
+    <label class="check"><span id="snackLabel">Merienda</span><input class="daily-check" data-key="snack" type="checkbox"></label>
+    <label class="check"><span>Cena</span><input class="daily-check" data-key="dinner" type="checkbox"></label>
+
+    <div class="daily-section-title">💧 HÁBITOS</div>
+    <label class="check"><span>Agua · 3,5 L</span><input class="daily-check" data-key="water" type="checkbox"></label>
+    <label class="check"><span>Sal total · 4 g</span><input class="daily-check" data-key="salt" type="checkbox"></label>
+    <label class="check"><span>Creatina · 5 g</span><input class="daily-check" data-key="creatine" type="checkbox"></label>
+
+    <div class="daily-section-title">🏋️ ENTRENAMIENTO</div>
+    <label class="check" id="workoutRow"><span>Entrenamiento completado</span><input class="daily-check" data-key="workout" type="checkbox"></label>
+
+    <div class="history-title">HISTORIAL</div>
+    <div id="history" class="history"></div>
+  </div>
+</section>
+
 <section id="training" class="screen">
-<div class="topbar"><button class="back" onclick="openSection('home')">‹</button><div><div class="page-title">Entrenamiento</div><div class="page-sub">Hipertrofia avanzada · 4 días/semana</div></div></div>
-<div class="placeholder" style="text-align:left"><h2>HIPERTROFIA AVANZADA</h2><p><b>OBJETIVO: MÁXIMA GANANCIA DE MASA MUSCULAR</b><br>4 DÍAS/SEMANA · NIVEL AVANZADO</p>
-<h3>🦵 DÍA 1 — CUÁDRICEPS + PECTORAL</h3><p><b>CUÁDRICEPS</b><br>1. Hack squat — 3 × 6-8 · 1 × 10-12 · RIR 1-2 · Última serie: REST-PAUSE 8 + 3 + 2<br>2. Prensa 45º — pies bajos y anchura media — 3 × 8-10 · RIR 1 · Bajada controlada 3"<br>3. Extensión de cuádriceps — 3 × 10-12 · Última: DROP-SET · 10-12 + bajar 20-25% + 6-8<br>4. Sentadilla búlgara — 2 × 8-10/cada pierna · RIR 1-2<br>5. Adduccion máquina — 3x10-12+1d+ 30seg iso</p><p><b>PECTORAL</b><br>6. Press inclinado máquina — 3 × 6-8 · RIR 1<br>7. Press convergente horizontal — 3 × 8-10 · Última con REST-PAUSE<br>8. Aperturas en polea — 2 × 12-15 · 2" de contracción<br>9. Fondos para pecho — 2 × 8-12 · Cerca del fallo técnico</p>
-<h3>🦅 DÍA 2 — ESPALDA + FEMORAL</h3><p><b>ESPALDA</b><br>1. Dominadas lastradas — 3 × 5-8 · RIR 1-2<br>2. Remo pecho apoyado — 3 × 6-8 · Pesado<br>3. Jalón unilateral — 3 × 8-10/lado · Estiramiento completo<br>4. Remo unilateral máquina — 2 × 10-12 · Última DROP-SET<br>5. Pullover en máquina/polea — 2 × 12-15</p><p><b>FEMORAL</b><br>6. Peso muerto rumano — 3 × 6-8 · RIR 1-2 · 3" excéntrica<br>7. Curl femoral sentado — 3 × 8-10 · Última REST-PAUSE<br>8. Curl femoral tumbado — 2 × 10-12 + DROP<br>9. Gemelo sentado — 3 × 8-12 · Pausa abajo y arriba</p>
-<h3>🏋🏻 DÍA 3 — HOMBRO + BRAZOS</h3><p><b>HOMBRO</b><br>1. Press hombro máquina — 3 × 6-8 · RIR 1<br>2. Elevación lateral máquina — 3 × 10-12 · Última: DROP + parciales<br>3. Elevación lateral unilateral polea — 3 × 12-15<br>4. Pájaros/rear delt machine — 3 × 12-15 · Última REST-PAUSE</p><p><b>BÍCEPS</b><br>5. Curl predicador máquina — 3 × 8-10 · Última DROP<br>6. Curl inclinado mancuernas — 2 × 10-12<br>7. Curl martillo cuerda — 2 × 10-12</p><p><b>TRÍCEPS</b><br>8. Pressdown cuerda — 3 × 8-10 · RIR 1<br>9. Extensión tríceps por encima de cabeza — 3 × 10-12 · Máximo estiramiento<br>10. Fondos máquina — 2 × 8-12 · Última cerca del fallo</p>
-<h3>🍑 DÍA 4 — FEMORAL/GLÚTEO + ESPALDA/PECTORAL</h3><p><b>FEMORAL + GLÚTEO</b><br>1. Hip thrust máquina — 3 × 6-8 · 2" arriba · RIR 1<br>2. Peso muerto rumano con mancuernas — 2 × 8-10 · RIR 1-2<br>3. Curl femoral sentado — 3 × 8-10 · Última REST-PAUSE<br>4. Prensa — pies altos — 3 × 10-12 · Profundidad máxima controlada<br>5. Abducción máquina — 2 × 15-20 · Última DROP-SET</p><p><b>ESPALDA</b><br>6. Jalón agarre neutro — 3 × 8-10<br>7. Remo máquina convergente — 2 × 8-10 · Pesado</p><p><b>PECTORAL</b><br>8. Press inclinado máquina — 2 × 8-10<br>9. Cruce de poleas — 2 × 12-15</p>
-</div></section>
+  <div class="topbar">
+    <button class="back" onclick="openSection('home')">‹</button>
+    <div><div class="page-title">Entrenamiento</div><div class="page-sub">Hipertrofia avanzada · 4 días/semana</div></div>
+  </div>
+  <div class="label">OBJETIVO · MÁXIMA GANANCIA DE MASA MUSCULAR</div>
+  <div class="workout-tabs">
+    <button id="w1" class="active" onclick="setWorkout(1)">DÍA 1</button>
+    <button id="w2" onclick="setWorkout(2)">DÍA 2</button>
+    <button id="w3" onclick="setWorkout(3)">DÍA 3</button>
+    <button id="w4" onclick="setWorkout(4)">DÍA 4</button>
+  </div>
+  <div id="workoutContent"></div>
+</section>
+
 <footer class="footer">ALESSANDRO // PERSONAL FITNESS · Versión inicial</footer>
 </main>
 
 <script>
+const plan = {
+training:[
+["09:00","COMIDA 1","Desayuno · elige una opción",[
+"<b>Opción A:</b> Café (opcional); 150 ml bebida almendras Zero; 70 g (2 reb) pan cereales s/gluten. Tostar; 100 g tomate; 5 g AOVE; 2 huevos + 150 g claras; 150 g piña en su jugo.",
+"<b>Opción B:</b> Café (opcional); 150 ml bebida almendras Zero; <b>Bizcocho fit</b> con 2 huevos + 150 g claras; 50 g copos avena ó harina avena s/gluten; 100 g plátano ó manzana; canela; 5 g stevia en polvo; bebida almendras Zero si hace falta para textura. Batir y hornear a 180º unos 20-25 min. Añadir por encima 14 g (2 onzas) chocolate negro mínimo 85% cacao.",
+"<b>Suplementos:</b> 2 perlas Omega3 + 1 cáps VitC."
+]],
+["12:00","PRE-ENTRENO","30 g ISO · 200 ml bebida almendras Zero · 50 g copos maíz s/azúcar ó COR",[
+"600 mg NAC · 600 mg Potasio Boi-K · 1 g sal."
+]],
+["15:00","COMIDA 2","Verdura + hidratos + proteína",[
+"100 g ensalada 4 estaciones ó salteado de verduras.",
+"<b>Hidratos — elegir uno:</b> 80 g arroz blanco ó pasta s/gluten pesado en seco (200 g en cocido) ó 350 g patata/boniato pesado en cocido.",
+"<b>Proteína — elegir uno:</b> 180 g carne roja magra/ pechuga pollo/pavo o lomo magro pesada en cocido.",
+"5 g AOVE.",
+"<b>Suplementos:</b> 5 g Creatine Monohydrate + 375 mg Magnesio."
+]],
+["18:00","COMIDA 4","Tortitas/tostadas + proteína + fruta",[
+"40 g tortitas de arroz ó tostadas ligeras s/gluten.",
+"<b>Proteína — elegir uno:</b> 100 g pechuga pollo/pavo ó jamón cocido mínimo 92% carne magra ó 80 g jamón curado s/azúcar ó 150 g cottage 0% + 20 g crema cacahuete 100%.",
+"100 g arándanos."
+]],
+["21:00","COMIDA 4","Proteína + verdura + patata/boniato",[
+"<b>Proteína — elegir uno:</b> 180 g pechuga pollo/pavo ó lomo magro pesado en cocido ó 200 g pescado blanco pesado en cocido ó 170 g lomos de salmon pesado en cocido ó 2 huevos + 200 g claras.",
+"100 g espárragos pesados en cocido (bote) ó salteado de verduras.",
+"350 g patata/boniato pesado en cocido.",
+"5 g AOVE."
+]]
+],
+rest:[
+["09:00","COMIDA 1","Desayuno · elige una opción",[
+"<b>Opción A:</b> Café (opcional); 200 ml bebida almendras Zero; 70 g (2 reb) pan cereales s/gluten. Tostar; 100 g tomate; 5 g AOVE; 2 huevos + 120 g claras; 150 g piña en su jugo.",
+"<b>Opción B:</b> Café (opcional); 200 ml bebida almendras Zero; <b>Bizcocho fit</b> con 2 huevos + 120 g claras; 40 g copos avena ó harina avena s/gluten; 100 g plátano; canela; 5 g stevia en polvo; bebida almendras Zero si hace falta para textura. Batir y hornear a 180º unos 20-25 min. Añadir por encima 15 g (2 onzas) chocolate negro mínimo 85% cacao.",
+"<b>Suplementos:</b> 2 perlas Omega3 + 1 cáps VitC."
+]],
+["14:00","COMIDA 2","Verdura + proteína + hidratos",[
+"125 g ensalada 4 estaciones ó salteado de verduras.",
+"<b>Hidratos — elegir uno:</b> 60 g arroz blanco ó pasta s/gluten pesado en seco (150 g en cocido) ó 300 g patata/boniato pesado en cocido.",
+"180 g carne roja magra/ pechuga pollo/pavo o lomo magro pesada en cocido.",
+"5 g AOVE.",
+"<b>Suplementos:</b> 5 g Creatine Monohydrate + 375 mg Magnesio."
+]],
+["17:00","COMIDA 4","Bizcocho fit",[
+"Café (opcional).",
+"150 g cottage.",
+"1 huevo + 120 g claras.",
+"35 g copos avena s/gluten.",
+"80 g manzana ó frutos rojos.",
+"Canela.",
+"5 g stevia en polvo.",
+"Bebida almendras zero por textura.",
+"Batir y hornear a 180º unos 20-25 min."
+]],
+["21:00","COMIDA 4","Proteína + verdura + hidratos",[
+"<b>Proteína — elegir uno:</b> 180 g pechuga pollo/pavo ó lomo magro pesado en cocido ó 200 g pescado blanco pesado en cocido ó 170 g lomos de salmon pesado en cocido ó 2 huevos + 200 g claras.",
+"100 g espárragos pesados en cocido (bote) ó salteado de verduras.",
+"<b>Hidratos — elegir uno:</b> 50 g arroz ó pasta s/gluten pesado en seco (125 g en cocido) ó 250 g patata/boniato pesado en cocido.",
+"5 g AOVE."
+]]
+]};
+
+const workouts = {
+1:{
+title:"DÍA 1 — CUÁDRICEPS + PECTORAL",
+sections:[
+["CUÁDRICEPS",[
+"1. Hack squat — 3 × 6-8; 1 × 10-12 · RIR 1-2 · Última serie: REST-PAUSE 8 + 3 + 2",
+"2. Prensa 45º — pies bajos y anchura media · 3 × 8-10 · RIR 1 · Bajada controlada 3\"",
+"3. Extensión de cuádriceps — 3 × 10-12 · Última: DROP-SET · 10-12 + bajar 20-25% + 6-8",
+"4. Sentadilla búlgara — 2 × 8-10/cada pierna · RIR 1-2",
+"5. Adduccion máquina — 3x10-12+1d+ 30seg iso"
+]],
+["PECTORAL",[
+"6. Press inclinado máquina — 3 × 6-8 · RIR 1",
+"7. Press convergente horizontal — 3 × 8-10 · Última con REST-PAUSE",
+"8. Aperturas en polea — 2 × 12-15 · 2\" de contracción",
+"9. Fondos para pecho — 2 × 8-12 · Cerca del fallo técnico"
+]]
+]},
+2:{
+title:"DÍA 2 — ESPALDA + FEMORAL",
+sections:[
+["ESPALDA",[
+"1. Dominadas lastradas — 3 × 5-8 · RIR 1-2",
+"2. Remo pecho apoyado — 3 × 6-8 · Pesado",
+"3. Jalón unilateral — 3 × 8-10/lado · Estiramiento completo",
+"4. Remo unilateral máquina — 2 × 10-12 · Última DROP-SET",
+"5. Pullover en máquina/polea — 2 × 12-15"
+]],
+["FEMORAL",[
+"6. Peso muerto rumano — 3 × 6-8 · RIR 1-2 · 3\" excéntrica",
+"7. Curl femoral sentado — 3 × 8-10 · Última REST-PAUSE",
+"8. Curl femoral tumbado — 2 × 10-12 + DROP",
+"9. Gemelo sentado — 3 × 8-12 · Pausa abajo y arriba"
+]]
+]},
+3:{
+title:"DÍA 3 — HOMBRO + BRAZOS",
+sections:[
+["HOMBRO",[
+"1. Press hombro máquina — 3 × 6-8 · RIR 1",
+"2. Elevación lateral máquina — 3 × 10-12 · Última: DROP + parciales",
+"3. Elevación lateral unilateral polea — 3 × 12-15",
+"4. Pájaros/rear delt machine — 3 × 12-15 · Última REST-PAUSE"
+]],
+["BÍCEPS",[
+"5. Curl predicador máquina — 3 × 8-10 · Última DROP",
+"6. Curl inclinado mancuernas — 2 × 10-12",
+"7. Curl martillo cuerda — 2 × 10-12"
+]],
+["TRÍCEPS",[
+"8. Pressdown cuerda — 3 × 8-10 · RIR 1",
+"9. Extensión tríceps por encima de cabeza — 3 × 10-12 · Máximo estiramiento",
+"10. Fondos máquina — 2 × 8-12 · Última cerca del fallo"
+]]
+]},
+4:{
+title:"DÍA 4 — FEMORAL/GLÚTEO + ESPALDA/PECTORAL",
+sections:[
+["FEMORAL + GLÚTEO",[
+"1. Hip thrust máquina — 3 × 6-8 · 2\" arriba · RIR 1",
+"2. Peso muerto rumano con mancuernas — 2 × 8-10 · RIR 1-2",
+"3. Curl femoral sentado — 3 × 8-10 · Última REST-PAUSE",
+"4. Prensa — pies altos — 3 × 10-12 · Profundidad máxima controlada",
+"5. Abducción máquina — 2 × 15-20 · Última DROP-SET"
+]],
+["ESPALDA",[
+"6. Jalón agarre neutro — 3 × 8-10",
+"7. Remo máquina convergente — 2 × 8-10 · Pesado"
+]],
+["PECTORAL",[
+"8. Press inclinado máquina — 2 × 8-10",
+"9. Cruce de poleas — 2 × 12-15"
+]]
+]}};
+
+let currentDay="training";
+let currentWorkout=1;
+
 function openSection(id){
  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
  document.getElementById(id).classList.add("active");
  window.scrollTo({top:0,behavior:"smooth"});
 }
+function setDay(day){
+ currentDay=day;
+ document.getElementById("trainTab").classList.toggle("active",day==="training");
+ document.getElementById("restTab").classList.toggle("active",day==="rest");
+ updateDailyMode();
+ renderFood();
+}
+function renderFood(){
+ const arr=plan[currentDay];
+ document.getElementById("foodContent").innerHTML=
+ `<div class="label">${currentDay==="training"?"PLAN · DÍA DE ENTRENAMIENTO":"PLAN · DÍA DE DESCANSO"}</div>
+ <div class="meals">${arr.map(m=>`
+ <article class="meal" onclick="this.classList.toggle('open')">
+  <div class="mealhead"><div class="time">${m[0]}</div><div><div class="mealtitle">${m[1]}</div><div class="summary">${m[2]}</div></div></div>
+  <div class="details"><ul>${m[3].map(x=>`<li>${x}</li>`).join("")}</ul></div>
+ </article>`).join("")}</div>`;
+}
+function setWorkout(day){
+ currentWorkout=day;
+ for(let i=1;i<=4;i++) document.getElementById("w"+i).classList.toggle("active",i===day);
+ renderWorkout();
+}
+function renderWorkout(){
+ const w=workouts[currentWorkout];
+ document.getElementById("workoutContent").innerHTML=
+ `<div class="label">${w.title}</div>
+  <div class="meals">${w.sections.map(s=>`
+   <article class="meal" onclick="this.classList.toggle('open')">
+    <div class="mealhead"><div class="time">▸</div><div><div class="mealtitle">${s[0]}</div><div class="summary">${s[1].length} ejercicios · pulsa para abrir</div></div></div>
+    <div class="details"><ul>${s[1].map(x=>`<li>${x}</li>`).join("")}</ul></div>
+   </article>`).join("")}</div>`;
+}
+
+const CHECK_KEYS=["breakfast","preworkout","lunch","snack","dinner","water","salt","creatine","workout"];
+function dateKey(date=new Date()){
+ const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,"0"),d=String(date.getDate()).padStart(2,"0");
+ return `${y}-${m}-${d}`;
+}
+function prettyDate(date=new Date()){
+ return date.toLocaleDateString("es-ES",{weekday:"short",day:"2-digit",month:"short"}).replace(/\.$/,"").toUpperCase();
+}
+function loadChecks(){
+ const saved=JSON.parse(localStorage.getItem("alessandro_daily_checks")||"{}");
+ return saved[dateKey()]||{};
+}
+function saveChecks(){
+ const saved=JSON.parse(localStorage.getItem("alessandro_daily_checks")||"{}");
+ const state={};
+ document.querySelectorAll(".daily-check").forEach(cb=>state[cb.dataset.key]=cb.checked);
+ saved[dateKey()]=state;
+ localStorage.setItem("alessandro_daily_checks",JSON.stringify(saved));
+ updateDaily();
+}
+function updateDaily(){
+ const state=loadChecks();
+ document.querySelectorAll(".daily-check").forEach(cb=>cb.checked=!!state[cb.dataset.key]);
+ const activeBoxes=[...document.querySelectorAll(".daily-check")].filter(cb=>cb.closest("label").style.display!=="none");
+ const done=activeBoxes.filter(cb=>cb.checked).length;
+ const pct=Math.round(done/activeBoxes.length*100);
+ document.getElementById("scoreText").textContent=`${pct}%`;
+ document.getElementById("progressBar").style.width=`${pct}%`;
+ document.getElementById("todayLabel").textContent=`HOY · ${prettyDate()}`;
+ renderHistory();
+}
+function updateDailyMode(){
+ const rest=currentDay==="rest";
+ document.getElementById("preRow").style.display=rest?"none":"flex";
+ document.getElementById("workoutRow").style.display=rest?"none":"flex";
+ document.querySelector("#snackLabel").textContent=rest?"Bizcocho":"Merienda";
+ updateDaily();
+}
+function renderHistory(){
+ const history=JSON.parse(localStorage.getItem("alessandro_daily_checks")||"{}");
+ const entries=Object.entries(history).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,14);
+ const el=document.getElementById("history");
+ if(!entries.length){el.innerHTML='<div class="history-row"><span>Tu historial aparecerá aquí.</span><span>—</span></div>';return}
+ el.innerHTML=entries.map(([date,state])=>{
+  const done=CHECK_KEYS.filter(k=>state[k]).length;
+  const pct=Math.round(done/CHECK_KEYS.length*100);
+  const [y,m,d]=date.split("-");
+  const label=new Date(Number(y),Number(m)-1,Number(d)).toLocaleDateString("es-ES",{day:"numeric",month:"long"});
+  return `<div class="history-row"><span>${label}</span><span class="history-score">${done}/${CHECK_KEYS.length} · ${pct}%</span></div>`;
+ }).join("");
+}
+document.querySelectorAll(".daily-check").forEach(cb=>cb.addEventListener("change",saveChecks));
+renderFood();
+renderWorkout();
+updateDailyMode();
 </script>
 </body>
 </html>
