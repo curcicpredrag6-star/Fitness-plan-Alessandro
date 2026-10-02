@@ -109,7 +109,7 @@ button{font:inherit}
   <div class="hero">
     <div class="kicker">PERSONAL PROFILE</div>
     <h1>ALESSANDRO</h1>
-    <p>Plan personalizado · Alimentación & entrenamiento</p>
+    <p>PREPA 2 · Alimentación & entrenamiento</p>
     <div class="stats">
       <div class="stat"><strong>66,50 kg</strong><span>Peso inicial</span></div>
       <div class="stat"><strong>1,80 m</strong><span>Altura</span></div>
@@ -132,7 +132,7 @@ button{font:inherit}
 <section id="food" class="screen">
   <div class="topbar">
     <button class="back" onclick="openSection('home')">‹</button>
-    <div><div class="page-title">Alimentación</div><div class="page-sub">19/08/2026 → 25/08/2026 · 4 días de entrenamiento</div></div>
+    <div><div class="page-title">Alimentación</div><div class="page-sub">02/10/2026 → 15/10/2026 · 4 días de entrenamiento</div></div>
   </div>
 
   <div class="day-tabs">
@@ -194,57 +194,54 @@ button{font:inherit}
 <script>
 const plan = {
 training:[
-["09:00","COMIDA 1","Desayuno · elige una opción",[
-"<b>Opción A:</b> Café (opcional); 150 ml bebida almendras Zero; 70 g (2 reb) pan cereales s/gluten. Tostar; 100 g tomate; 5 g AOVE; 2 huevos + 150 g claras; 150 g piña en su jugo.",
-"<b>Opción B:</b> Café (opcional); 150 ml bebida almendras Zero; <b>Bizcocho fit</b> con 2 huevos + 150 g claras; 50 g copos avena ó harina avena s/gluten; 100 g plátano ó manzana; canela; 5 g stevia en polvo; bebida almendras Zero si hace falta para textura. Batir y hornear a 180º unos 20-25 min. Añadir por encima 14 g (2 onzas) chocolate negro mínimo 85% cacao.",
+["09:00","COMIDA 1","Desayuno · tortilla francesa, avena y plátano",[
+"Café (opcional); 250 ml bebida almendras Zero; 120 g copos avena + canela; 100 g plátano; 20 g crema cacahuete/almendras 100% s/gluten.",
+"<b>Tortilla francesa rellena:</b> 3 huevos; 40 g queso crema s/lactosa; 35 g taquitos jamón curado s/azúcar.",
 "<b>Suplementos:</b> 2 perlas Omega3 + 1 cáps VitC."
 ]],
-["12:00","PRE-ENTRENO","30 g ISO · 200 ml bebida almendras Zero · 50 g copos maíz s/azúcar ó COR",[
+["12:00","PRE-ENTRENO","40 g ISO Evolution Amix s/lactosa · 200 ml bebida almendras Zero",[
 "600 mg NAC · 600 mg Potasio Boi-K · 1 g sal."
 ]],
-["15:00","COMIDA 2","Verdura + hidratos + proteína",[
-"100 g ensalada 4 estaciones ó salteado de verduras.",
-"<b>Hidratos — elegir uno:</b> 80 g arroz blanco ó pasta s/gluten pesado en seco (200 g en cocido) ó 350 g patata/boniato pesado en cocido.",
+["15:00","COMIDA 2","Legumbre + hidratos + proteína",[
+"100 g guisantes/lentejas pesada en cocido (bote).",
+"<b>Hidratos — elegir uno:</b> 80 g arroz blanco ó pasta s/gluten pesado en seco (200 g en cocido).",
 "<b>Proteína — elegir uno:</b> 180 g carne roja magra/ pechuga pollo/pavo o lomo magro pesada en cocido.",
-"5 g AOVE.",
+"10 g AOVE.",
 "<b>Suplementos:</b> 5 g Creatine Monohydrate + 375 mg Magnesio."
 ]],
-["18:00","COMIDA 4","Tortitas/tostadas + proteína + fruta",[
-"40 g tortitas de arroz ó tostadas ligeras s/gluten.",
-"<b>Proteína — elegir uno:</b> 100 g pechuga pollo/pavo ó jamón cocido mínimo 92% carne magra ó 80 g jamón curado s/azúcar ó 150 g cottage 0% + 20 g crema cacahuete 100%.",
-"100 g arándanos."
+["18:00","COMIDA 4","Quark/natilla + copos de maíz + crema de frutos secos",[
+"240 g quark 0% ó natilla +Proteínas Hacendado.",
+"50 g copos maíz 0% azúcares.",
+"20 g crema cacahuete/almendras 100% s/gluten."
 ]],
-["21:00","COMIDA 4","Proteína + verdura + patata/boniato",[
+["21:00","COMIDA 4","Proteína + ensalada + quinoa",[
 "<b>Proteína — elegir uno:</b> 180 g pechuga pollo/pavo ó lomo magro pesado en cocido ó 200 g pescado blanco pesado en cocido ó 170 g lomos de salmon pesado en cocido ó 2 huevos + 200 g claras.",
-"100 g espárragos pesados en cocido (bote) ó salteado de verduras.",
-"350 g patata/boniato pesado en cocido.",
-"5 g AOVE."
+"125 g ensalada 4 estaciones; 80 g tomate.",
+"125 g (1 tarrina) quinoa blanca-roja pesada en cocido.",
+"5 g AOVE; vinagre manzana s/filtrar."
 ]]
 ],
 rest:[
 ["09:00","COMIDA 1","Desayuno · elige una opción",[
-"Café (opcional); 200 ml bebida almendras Zero; 120 g (2) tortillas cereales s/gluten (fajitas); 60 g tomate frito light s/azúcar ni gluten; 60 g mozzarella rallada; 140 g tiras de pollo al horno; 100 g aguacate; 1 kiwi.",
-"<b>Opción B — Bizcocho fit:</b> Café (opcional); 200 ml bebida almendras Zero; 4 huevos; 50 g copos avena ó harina avena s/gluten; 100 g plátano; canela; 5 g stevia en polvo; bebida almendras Zero si hace falta para textura. Batir y hornear a 180º unos 20-25 min. Añadir por encima 15 g (2 onzas) chocolate negro mínimo 85% cacao.",
+"<b>Opción A:</b> Café (opcional); 200 ml bebida almendras Zero; 120 g (2) tortillas cereales s/gluten (fajitas); 60 g tomate frito light s/azúcar ni gluten; 60 g mozzarella rallada; 140 g tiras de pollo al horno; 100 g aguacate; 1 kiwi.",
+"<b>Opción B — Bizcocho fit proteico:</b> Café (opcional); 200 ml bebida almendras Zero; 2 huevos + 150 g claras; 60 g copos avena ó harina avena s/gluten; 100 g plátano; 20 g crema cacahuete/almendras 100% s/gluten; 10 g cacao puro en polvo desgrasado s/azúcar; canela; 5 g stevia en polvo; bebida almendras Zero si hace falta para textura. Batir y hornear a 180º unos 20-25 min.",
 "<b>Suplementos:</b> 2 perlas Omega3 + 1 cáps VitC."
 ]],
 ["14:00","COMIDA 2","Verdura + hidratos + proteína",[
 "125 g ensalada 4 estaciones ó salteado de verduras.",
 "<b>Hidratos — elegir uno:</b> 60 g arroz blanco ó pasta s/gluten pesado en seco (150 g en cocido) ó 300 g patata/boniato pesado en cocido.",
 "<b>Proteína — elegir uno:</b> 180 g carne roja magra/ pechuga pollo/pavo o lomo magro pesada en cocido ó 150 g atún al natural.",
-"15 g AOVE.",
+"10 g AOVE; vinagre manzana s/filtrar (opcional).",
 "<b>Suplementos:</b> 5 g Creatine Monohydrate + 375 mg Magnesio."
 ]],
-["17:00","COMIDA 4","Yogur + muesli + crema de cacahuete/almendras + fruta",[
+["17:00","COMIDA 4","Rollitos proteicos",[
 "Café (opcional).",
-"240 g (2) yogur natural High Protein ó queso batido 0%.",
-"50 g muesli crunchy s/azúcar y s/gluten ó copos maiz s/azúcar.",
-"20 g crema cacahuete/almendras 100%.",
-"150 g piña ó manzana.",
-"Canela."
+"<b>Ingredientes:</b> 30 g (3) papel de arroz; 1 huevo (para hidratar el papel); 100 g plátano; 150 g quark 0%; 40 g prote ISO Evolution Amix; 10 g cacao en polvo puro desgrasado s/azúcar; 20 g crema cacahuete/almendras 100% s/gluten; 5 g stevia en polvo/canela.",
+"Mezcla el quark con la prote, cacao, crema cacahuete, stevia y canela. Deja reposar 5-10 min. Hidrata las 3 hojas de papel de arroz en el huevo y rellena de la crema + 100 g plátano en láminas. Enrollar bien y airfryer u horno 180º 5-7 min."
 ]],
-["21:00","COMIDA 4","Proteína + verdura + hidratos",[
+["21:00","COMIDA 4","Proteína + verduras + hidratos",[
 "<b>Proteína — elegir uno:</b> 180 g pechuga pollo/pavo ó lomo magro pesado en cocido ó 200 g pescado blanco pesado en cocido ó 170 g lomos de salmon pesado en cocido ó 2 huevos + 200 g claras.",
-"100 g espárragos pesados en cocido (bote) ó salteado de verduras.",
+"100 g braseado de verduras pesado en crudo (congelado).",
 "<b>Hidratos — elegir uno:</b> 50 g arroz ó pasta s/gluten pesado en seco (125 g en cocido) ó 250 g patata/boniato pesado en cocido.",
 "5 g AOVE."
 ]]
@@ -252,76 +249,76 @@ rest:[
 
 const workouts = {
 1:{
-title:"DÍA 1 — CUÁDRICEPS + PECTORAL",
+title:"DÍA 1 — CUÁDRICEPS + PECHO",
 sections:[
 ["CUÁDRICEPS",[
-"1. Hack squat — 3 × 6-8; 1 × 10-12 · RIR 1-2 · Última serie: REST-PAUSE 8 + 3 + 2",
-"2. Prensa 45º — pies bajos y anchura media · 3 × 8-10 · RIR 1 · Bajada controlada 3\"",
-"3. Extensión de cuádriceps — 3 × 10-12 · Última: DROP-SET · 10-12 + bajar 20-25% + 6-8",
-"4. Sentadilla búlgara — 2 × 8-10/cada pierna · RIR 1-2",
-"5. Adduccion máquina — 3x10-12+1d+ 30seg iso"
+"1. HACK SQUAT — 1 × 6-8; 2 × 8-10. Última: REST-PAUSE → 8-10 + 3-4 + 2-3.",
+"2. PRENSA 45º — 3 × 8-10. Última MET-DOWN (-20% → 6-8 reps).",
+"3. EXTENSIÓN DE CUÁDRICEPS — 3 × 10-12. Última DROP-SET: 10-12 → -25% → 6-8 → -20% → 5-6. Ejecución muy controlada, especialmente en la fase excéntrica.",
+"4. BÚLGARA — 2 × 8-10/cada pierna · RIR 1.",
+"5. ADDUCTOR — 3 × 10-12."
 ]],
-["PECTORAL",[
-"6. Press inclinado máquina — 3 × 6-8 · RIR 1",
-"7. Press convergente horizontal — 3 × 8-10 · Última con REST-PAUSE",
-"8. Aperturas en polea — 2 × 12-15 · 2\" de contracción",
-"9. Fondos para pecho — 2 × 8-12 · Cerca del fallo técnico"
+["PECHO",[
+"6. PRESS INCLINADO EN MÁQUINA — 3 × 6-8 · RIR 1. Última: REST-PAUSE 6-8 + 3 + 2.",
+"7. PRESS CONVERGENTE HORIZONTAL — 3 × 8-10. Última DROP-SET.",
+"8. APERTURAS EN POLEA — 2 × 12-15. Última con parciales controladas después del fallo técnico.",
+"9. FONDOS EN MÁQUINA — 2 × 8-12 · RIR 0-1."
 ]]
 ]},
 2:{
 title:"DÍA 2 — ESPALDA + FEMORAL",
 sections:[
 ["ESPALDA",[
-"1. Dominadas lastradas — 3 × 5-8 · RIR 1-2",
-"2. Remo pecho apoyado — 3 × 6-8 · Pesado",
-"3. Jalón unilateral — 3 × 8-10/lado · Estiramiento completo",
-"4. Remo unilateral máquina — 2 × 10-12 · Última DROP-SET",
-"5. Pullover en máquina/polea — 2 × 12-15"
+"1. DOMINADAS LASTRADAS — 3 × 5-8 · RIR 1-2.",
+"2. REMO CON PECHO APOYADO — 3 × 6-8. Última REST-PAUSE.",
+"3. JALÓN UNILATERAL — 3 × 8-10. Última: DROP-SET.",
+"4. REMO MÁQUINA UNILATERAL — 2 × 10-12. Última MET-DOWN.",
+"5. PULLOVER — 2 × 12-15. Última cerca del fallo."
 ]],
 ["FEMORAL",[
-"6. Peso muerto rumano — 3 × 6-8 · RIR 1-2 · 3\" excéntrica",
-"7. Curl femoral sentado — 3 × 8-10 · Última REST-PAUSE",
-"8. Curl femoral tumbado — 2 × 10-12 + DROP",
-"9. Gemelo sentado — 3 × 8-12 · Pausa abajo y arriba"
+"6. PESO MUERTO RUMANO — 3 × 6-8 · RIR 1-2 · 3\" excéntrica.",
+"7. CURL FEMORAL SENTADO — 3 × 8-10. Última REST-PAUSE.",
+"8. CURL FEMORAL TUMBADO — 2 × 10-12. Última DROP.",
+"9. GEMELO SENTADO — 3 × 8-12. Última REST-PAUSE."
 ]]
 ]},
 3:{
 title:"DÍA 3 — HOMBRO + BRAZOS",
 sections:[
 ["HOMBRO",[
-"1. Press hombro máquina — 3 × 6-8 · RIR 1",
-"2. Elevación lateral máquina — 3 × 10-12 · Última: DROP + parciales",
-"3. Elevación lateral unilateral polea — 3 × 12-15",
-"4. Pájaros/rear delt machine — 3 × 12-15 · Última REST-PAUSE"
+"1. PRESS HOMBRO MÁQUINA — 3 × 6-8 · RIR 1.",
+"2. LATERAL MÁQUINA — 3 × 10-12. Última DROP + parciales.",
+"3. LATERAL UNILATERAL POLEA — 3 × 12-15. Última REST-PAUSE.",
+"4. PÁJARO MÁQUINA — 3 × 12-15. Última DROP."
 ]],
 ["BÍCEPS",[
-"5. Curl predicador máquina — 3 × 8-10 · Última DROP",
-"6. Curl inclinado mancuernas — 2 × 10-12",
-"7. Curl martillo cuerda — 2 × 10-12"
+"5. CURL PREDICADOR — 3 × 8-10. Última REST-PAUSE.",
+"6. CURL INCLINADO — 2 × 10-12 · RIR 0-1.",
+"7. CURL MARTILLO — 2 × 10-12. Última DROP."
 ]],
 ["TRÍCEPS",[
-"8. Pressdown cuerda — 3 × 8-10 · RIR 1",
-"9. Extensión tríceps por encima de cabeza — 3 × 10-12 · Máximo estiramiento",
-"10. Fondos máquina — 2 × 8-12 · Última cerca del fallo"
+"8. PRESSDOWN CUERDA — 3 × 8-10. Última REST-PAUSE.",
+"9. EXTENSIÓN TRÍCEPS SOBRE CABEZA — 3 × 10-12. Última DROP.",
+"10. FONDOS MÁQUINA — 2 × 8-12 · RIR 0-1."
 ]]
 ]},
 4:{
-title:"DÍA 4 — FEMORAL/GLÚTEO + ESPALDA/PECTORAL",
+title:"DÍA 4 — GLÚTEO + FEMORAL + ESPALDA + PECHO",
 sections:[
-["FEMORAL + GLÚTEO",[
-"1. Hip thrust máquina — 3 × 6-8 · 2\" arriba · RIR 1",
-"2. Peso muerto rumano con mancuernas — 2 × 8-10 · RIR 1-2",
-"3. Curl femoral sentado — 3 × 8-10 · Última REST-PAUSE",
-"4. Prensa — pies altos — 3 × 10-12 · Profundidad máxima controlada",
-"5. Abducción máquina — 2 × 15-20 · Última DROP-SET"
+["GLÚTEO + FEMORAL",[
+"1. HIP THRUST MÁQUINA — 3 × 6-8 · RIR 1 · 2\" de contracción arriba.",
+"2. RUMANO CON MANCUERNAS — 2 × 8-10 · RIR 1-2.",
+"3. CURL FEMORAL SENTADO — 3 × 8-10. Última REST-PAUSE.",
+"4. PRENSA PIES ALTOS — 3 × 10-12. Última DROP.",
+"5. ABDUCCIÓN — 2 × 15-20. DROP + parciales."
 ]],
 ["ESPALDA",[
-"6. Jalón agarre neutro — 3 × 8-10",
-"7. Remo máquina convergente — 2 × 8-10 · Pesado"
+"6. JALÓN NEUTRO — 3 × 8-10. Última REST-PAUSE.",
+"7. REMO CONVERGENTE — 2 × 8-10 · RIR 1."
 ]],
-["PECTORAL",[
-"8. Press inclinado máquina — 2 × 8-10",
-"9. Cruce de poleas — 2 × 12-15"
+["PECHO",[
+"8. PRESS INCLINADO MÁQUINA — 2 × 8-10. Última REST-PAUSE.",
+"9. CRUCE DE POLEAS — 2 × 12-15. Última DROP."
 ]]
 ]}};
 
